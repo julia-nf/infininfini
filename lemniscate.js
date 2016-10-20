@@ -1,6 +1,8 @@
 function setup() {
-	createCanvas(630, 360);
-	number_of_points = 250;
+	window_width = window.innerWidth;
+	window_height = window.innerHeight;
+	createCanvas(window_width, window_height);
+	number_of_points = 300;
 	points = [];
 	for(var i=0; i<number_of_points; i++){
 		points.push(new Point(i));
@@ -8,7 +10,7 @@ function setup() {
 }
 
 function draw() {
-	background(235, 235, 235);
+	background(245, 245, 245);
 	speed = 0.01;
 	for(var i=0; i<number_of_points; i++){
 		points[i].update(speed);
@@ -22,7 +24,7 @@ function draw() {
 	else {
 		if (points[0].a > 1) {
 			for(var i=0; i<number_of_points; i++){ 
-				points[i].a -= 0.1; 
+				points[i].a -= 0.5; 
 			}
 		}
 	}
